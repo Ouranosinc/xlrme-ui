@@ -1,0 +1,6 @@
+The original application has been developped by Ouranos with funding from 
+Natural Resources Canada. 
+
+Project lead: David Huard 
+Software lead: Kyran Dale
+Graphic design: Francis Boudreau 
