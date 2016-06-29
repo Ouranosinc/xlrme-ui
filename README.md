@@ -28,6 +28,27 @@ Then simply open a browser and go to `http://localhost:8080`
 Note that this server is not intended to be used in a production environment. 
 
 
+Creating your own case study
+----------------------------
+This version only includes one simple example of an application of the 
+XLRM-E approach (identified by `pub`). The original version includes 
+two other case studies. Creating your own custom application requires 
+creating datasets holding the results of the exploration phase, as well 
+as expert estimates. 
+
+Your data should be added in the `dmapp/static/<name>` directory, and the 
+configuration file in the `dmapp/<name>` directory. See the `pub` case
+for examples of how this is done. 
+
+Then, you'd go into `templates/base.html` and add a menu item. 
+
+You'd probably need new routes to get custom datasets (`api.py`) as well
+as javascript functions to perform some of the computations client-side 
+(`dmapp/static/js/script.js`). 
+
+Drop me a line if you want more info about how to do this. 
+
+
 Updating the translations
 -------------------------
 In the `dmapp/` directory, run:
@@ -35,14 +56,6 @@ In the `dmapp/` directory, run:
     pybabel extract -F babel.cfg -k lazy_gettext -o messages.pot .
     pybabel update -i messages.pot -d translations
     pybabel compile -d translations
-
-Creating your own case study
-----------------------------
-This version only includes one simple example of an application of the 
-XLRM-E approach. The original version includes two other case studies. 
-Creating your own custom application requires creating datasets holding
-the results of the exploration phase, as well as expert estimates. Drop 
-me a line if you want more info about how to do this. 
 
 
 Architecture
