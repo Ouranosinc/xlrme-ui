@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+{% block content %}
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <div class="container page-style">
+    <div class="row spacing">
+        <div class="col-xs-4">
+            <h1> Impetus for the project </h1>
+        </div>
+        <div class="col-xs-8">
+            <p>Ouranos is a consortium on regional climatology located in Montreal and created in 2002 following the Saguenay flood, the North American ice storm and a many consecutive years of low river flows. The damages caused by the deluge and the storm were large enough to provoke serious concerns about our collective vulnerability to meteorological events. Moreover, because 99% of the electricity is hydropowered, river flow, precipitation and ultimately climate, are considered strategic assets in Québec's economy. To better understand and document potential changes to the climate, Ouranos was created by the province, Hydro-Québec and universities as a pole of climate expertise to be shared among all interested parties. 
+            </p>
+            
+            <p>Part of the expertise at Ouranos lies in the development and operation of a regional climate model covering North America. This model takes simulations from low resolution global climate models as inputs and churns its own climate at a much higher resolution. Turning outputs from climate models into useful information is another area of expertise. It involves comparing the results from different simulations made by different models to evaluate which conclusions are robust and which are not. The results from these analyses are passed on to engineers and scientists in different fields to understand the impacts of climate change on forestry, agriculture, public health and energy production. </p>
+            
+            <p>However, after over 10  years of building and sharing climate information with cities, governments and private corporations, there are still few examples of climate information being used in real-life decision-making. There are many possible explanations for this. In some cases climate change impacts occur so far in the future compared to our planning horizon that adaptation actions can be safely postponed. In other cases the adaptation mechanisms are already in place and should cope with whatever climate we are faced with. But there remain areas where we believe that climate information has decision-making relevance yet is still not used. The hypothesis we are testing in this project is that the way we've presented climate information so far is an obstacle to its use in real-life settings. </p>
+  
+        </div>
+    </div>
+
+    <div class="row spacing">
+        <div class="col-xs-4">
+            <h1> Climate modeling </h1>
+              
+            <figure style="margin-top: 26em;">
+                <img src="/static/img/logo_1502_cmip_v4.png" alt="CMIP" width="100%">
+            </figure>
+        </div>
+        <div class="col-xs-8">
+            <p>A climate scenario is defined as a plausible representation of the future climate. These scenarios are usually created from a mix of weather records and simulations of climate models. Climate models embed the known laws of physics, thermodynamics and radiation, as well as biological and chemical processes. By solving the equations that emerge from those laws, we are able to reproduce, imperfectly, the Earth's climate. Being able to run a model of the Earth's climate on computers makes it easy to perform virtual experiments spanning thousands of years. 
+            </p><p>
+            Since there are many ways to build climate models, even when everyone agrees about the underlying laws of physics, there are over 20 different models all claiming to offer improvements over the others. To draw meaningful conclusions from this menagerie of models, scientists agree on a set of standard coordinated experiments that each model runs and whose results are shared publicly. This exercise has been going on for 15 years and is called the Coupled Model Intercomparison Project (CMIP). The IPCC reports are partly drawn from the results of these modeling experiments. 
+            </p><p>
+            Estimating the influence of greenhouse gases (GHG) on the climate is one of those experiments. The first step is to specify the amount of GHG that we will put into the model's atmosphere. This of course, is well outside climate science and has more to do with technology, economics, demographics and politics. Climate scientists thus rely on teams of scientists who specialize on modeling the world's economy to come up with different, plausible, GHG emission scenarios. There is usually a low end scenario with low emissions, a scenario with very high emissions and a few middle of the range cases. Modeling teams run their models using multiple GHG emission scenarios to simulate the impacts of GHG on temperatures, precipitations, sea ice, winds, etc.  
+            </p><p>
+            A central issue in climate modeling is that different models, when run with the same GHG emission scenario, generate different climates. Because the climate is such a complex and sensitive mechanism, the reasons for these differences are usually very hard to identify. To give a sense of this complexity, climate models include code that describes the opening of microscopic pores in plant and tree leaves in response to ambient temperature and carbon dioxide concentration. These pores, called stomates, control the gas exchanges necessary for photosynthesis but also let moisture out. If a model does a bad job of representing the opening of those pores, plant transpiration will be over or underestimated, impacting air humidity, cloud formation and so on, with ripple effects all around the globe. 
+            </p><p>
+            This sensitivity of weather phenomena to small perturbations is know in climate science as natural variability. Natural variability does not mean climate projections are worthless, but that caution must be exercised when interpreting climate simulations of the future. Large ensembles of simulations from many different models are compared to find the future climate features that are shared by many models, and thus are robust to model approximations. This concept is key to understand the difference between weather forecasts and climate projections. Weather forecasts go as far as two weeks at best, and forecasting the weather of June 18 2045 is a ridiculousc idea; the question climate models try to answer is rather "What would the climate normal be for the month of June in 2045". A climate model could help answer that question by running hundreds of simulations of year 2045. Because of natural variability, these simulations would all be slightly different from one another and we would still have no idea of what the actual weather of June 18 2045 would be like. On the other hand, by averaging the results we'd be able to estimate, within some uncertainty, what the mean temperature and precipitation would be. It turns out that this information about future climate normals can be useful to understand the impacts of climate change on ecoystems, infrastructures and hydropower production. 
+            </p>
+        </div>
+      </div>
+            
+    <div class="row spacing">
+        <div class="col-xs-4">
+            <h1> The cascade of uncertainty in climate scenarios </h1>
+        </div>
+        
+        
+        <div class="col-xs-8">
+          <p> The typical way we build climate scenarios goes something like this: 
+            <ul>
+                <li>Select one or more greenhouse gases scenarios</li>
+                <li>Select an ensemble of global climate models</li>
+                <li>Downscale, either with regional models or statistical methods, the simulations from the GCM ensemble</li>
+                <li>Drive an impact model, for example an hydrological model, using the downscaled simulations</li>
+            </ul>
+            </p>
+
+            <figure>
+                <img src="/static/img/chain_en.png" alt="Chain" width="100%">
+                <figcaption>
+                    Chain of sequential hypotheses required to create climate scenarios
+                </figcaption>
+            </figure>
+
+            <p>From a scientific point of view, this sequence of steps is the best approach we know of to assess the impacts of climate change. However, from a decision-making point of view, it leaves much to be desired.</p>
+            
+            <p>In the scenario building approach, each step carries its own uncertainty; as scientists, we want these uncertainties to be reflected as much as possible in the final results. But by taking all these unknowns into account, we end up with a wide range of possible results. However, this range makes the life of engineers and decision-makers difficult; many decisions are based on a single – best – number. But picking a single number implies choosing one single emission scenario, one single model, one single downscaling technique, etc. Climate scientists have so far not been able to come up with a scientifically justifiable way to make those choices, leaving decision-makers on their own, and climate information dismissed as impractical.</p>
+              <figure>
+                <img src="/static/img/cascade_blocks_en.png" alt="Cascade" width="90%">
+                <figcaption>
+                    Cascade of uncertainty. 
+                </figcaption>
+            </figure>
+            <p>
+            Even in the case where decision-makers manage to select single scenario, it is very easy for outsiders to critique and dismiss the results. Indeed, since the scenario building process is a chain, any weak link can break it. Someone could argue that the selected emission scenario is too optimistic or pessimistic; that the selected climate model is poor or that the impact model has flaws. A sequential approach to climate scenario building is thus inherently fragile, because it's overall credibility depends on a series of chained hypotheses. It's very easy to dismiss the end results by casting doubt on just one single step of the analysis, leaving decision-makers in a precarious position.</p>
+        </div>
+    </div>
+    
+    <div class="row spacing">
+        <div class="col-xs-4">
+            <h1>Robust decision-making </h1>
+        </div>
+        <div class="col-xs-8">
+            <p>The classical scenario approach can be described as a process where, to come to a conclusion, we first need to agree on assumptions – assumptions on GHG emissions, models, downscaling, etc. What scientists studying decision science are proposing is a scheme where instead of trying to agree on assumptions, discussions revolve on actual decisions <a href="#kalra15">(Kalra et al., 2015)</a>. This "agree-on-decision" approach looks very much like a sensitivity study, but one where the full spectrum of each uncertain variable (those that are difficult or impossible to agree on) is exhaustively sampled. </p>
+            <figure>
+                <img src="/static/img/agree-on-assumptions_en.png" alt="Agree-on-assumptions" width="50%" style="padding-right:5%"><img src="/static/img/agree-on-decisions_en.png" alt="Agree-on-decisions" width="50%" style="padding-left:5%">
+                <figcaption>
+                    Agree-on-assumptions vs agree-on-decisions. 
+                </figcaption>
+          </figure>
+          
+            <p>For example, let's say a company is looking to invest in new power generating station. The decision to invest or not will be based on the costs and the anticipated revenues, which in turn depend on the market price for electricity. However, electricity prices depend on customer demand, natural gas and coal prices, subsidies, environmental regulation, etc, and cannot be forecasted long into the future. The U.S. Energy Information Agency (<a href="www.eia.gov">EIA</a>) publishes each year its forecasts for electricity prices according to different scenarios: low nuclear future, high oil prices, low carbon prices, etc. </p>
+            <figure>
+                <img src="/static/img/price_spread_en.png" alt="EIA prices" width="100%">
+                <figcaption>
+                    Examples of price scenarios created by the EIA.
+                </figcaption>
+            </figure>
+            <p>
+            Now instead of having to agree on which price scenario will occur to build the power station, one could compute the revenues for a large range of prices, and instead ask the question: "Over what range of future prices is the powerhouse a good investment?"  It's much easier for decision-makers to come to an agreement when the question is framed like this. The EIA scenarios can then be looked at to see which price scenarios are pathways to a bad investment, and come up with fallback strategies to hedge those risks.
+            </p>
+            
+            <p>
+            This agree-on-decisions philosophy is embodied in the Robust Decision Making (RDM) approach, a method to iteratively refine solutions that are robust to a wide range of possible futures. The first step in the RDM approach is to hold discussions with experts, stakeholders and decision-makers to frame the decision with the XLMR framework: 
+            </p>
+            <dl class="dl-horizontal">
+            <dt>X</dt>
+            <dd>Deep uncertainties outside the decision-maker’s influence affecting the success of the strategy, e.g. runoff over the infrastructure life-time, future energy prices, new technologies, demand fluctuations, etc. Ofte, these uncertain variables stand for the future state of the world.</dd>
+            <dt>L</dt>
+            <dd>Levers on which the decision-makers has control, that is, the options and strategies that are available, such as plant upgrade options or status quo. </dd>
+            <dt>M</dt>
+            <dd>Metrics or measures of performance used to judge and rank different strategies, e.g. return on investment, reliability, security, least regret, etc.</dd>
+            <dt>R</dt>
+            <dd>Relations between levers, uncertainties and metrics, that is, the logic binding the other elements together. In the hydropower context, this usually includes hydrological processes, turbine efficiency, market price dependence on temperatures, etc. </dd>
+            </dl>
+            <p>
+            Once these X, L, M and R components are identified, analysts run thousands of calculations using relations (R) to compute the metric (M) values given levers (L) over the range of plausible values for the uncertain variables (X). Decision-makers then analyze the results to find levers who provide acceptable performances over a large range of plausible values for the uncertain variables. 
+            </p>
+        </div>
+    </div>
+    
+    <div class="row spacing">
+        <div class="col-xs-4">
+            <h1>Application to hydropower investments</h1>
+        </div>
+        <div class="col-xs-8">
+          <p>
+          This project applies the RDM approach to two typical cases of hydropower decision-making: choosing the number of turbines to upgrade in an existing power generating station, and sizing a new generating station. Of course, what follows is a simplified version of the decision-making process used in real-life, but this simplification  allows us to integrate climate change information. 
+          </p>
+ 
+          <p>
+          After discussions with engineers and managers at Manitoba Hydro and Hydro-Québec, the following flowchart relating the elements of the XLMR framework emerged. 
+          </p>
+          <figure>
+                <img src="/static/img/flow-chart_en.png" alt="Modeling flow chart" width="100%">
+                <figcaption>
+                    Flow chart of the RDM approach applied to hydropower investments. 
+                </figcaption>
+            </figure>
+          <p>
+          The climatic uncertain variables (X) are changes in annual mean precipitation, in the annual cycle of precipitation and on annual mean temperature over the watershed feeding the generating station. We also have market uncertainties, described by future energy prices and discout rates over the amortizement period. We thus have five uncertain variables that we explore over a set range. For example, we consider temperature changes going from -1C to +6C, with increments of 1C, and annual precipitation changes going from -20% to 50%. In practice, one way to apply these changes is to take the observed meteorological record over 30 years and perturb it by a fixed temperature increment or a precipitation multiplying factor. 
+          </p>
+          
+          <p>
+          The levers (L), or options, that decision-makers want to compare are closely tied to the type of investment. In the case of Manitoba Hydro, we are looking at upgrading turbines from an existing station. The levers are thus the number of turbines to be upgraded to a higher capacity. In the case of Hydro-Québec, we are considering a new power station, and the levers are the total installed capacity and the drawdown in the reservoir. 
+          </p>
+          <p>
+          The metrics (M) to be used to evaluate and compare the performance of our investment options are the mean river flow (for information purpose, since investment options have no influence on those), the energy production, the internal rate of return (IRR) and the net present value (NPV). Both the IRR and NPV depend closely on the price at which energy generated by the power station can be sold. Again, since energy price is an uncertain variable, we need to compute NPVs and IRRs over a range of future energy prices. 
+          </p>
+          
+          <p>
+          The relations (R) are made of hydrological models, energy production models and economic formulas that we use to convert our uncertain variables and parameters (such as investment costs) into metrics values. Computing those metrics over four of five dimensions generate large matrices of values. The applications bulit in this website help to visualize this information. 
+          </p>
+                  
+        </div>
+    </div>
+    
+        
+      <div class="row spacing">
+        <div class="col-xs-4">
+            <h1>Minimizing regret</h1>
+            <p style="font-size:200%; margin-top: 2em">
+            $$ R_l^s = \max_i M_i^s - M_l^s $$
+            </p>
+        </div>
+        <div class="col-xs-8">
+          <p>
+            An interesting concept often used in decision-making science is regret. Regret is the difference in performance between the lever chosen by the decision-maker in a particular future, and the best performing lever for that future. For example, let's imagine our base case assumption for turbine upgrades is the status quo, where no turbines are upgraded. In a world with temperatures 2C warmer and 10% more precipitation, we would find which lever offers the best performance, for example in terms of NPV, then compare the results to those of the base case study for the same future. The regret is the difference between both values, necessarily positive because if the best option is still no upgrade, then the regret is zero. By computing the regret over all possible futures, it is possible to see which lever minimize regret over a wide range of futures and thus is robust to uncertainties about the future. 
+            
+            For example, in the figure below illustrates in what states of the world options A, B and C minimize regret. That is, for each option, a metric is computed over a range of temperature and precipitation changes illustrated by the grid. The best performing option for each future state is then shown over colored areas. In this example, option B appears to be the most robust, being the no-regret option over a large range of future states, including one without temperature and precipitation changes. 
+          </p>
+        <figure>
+            <img src="/static/img/options_en.png" alt="Options minimizing regret" width="40%" style="margin-left:30%">
+            <figcaption>
+                States of the world where options A, B and C are the least-regret options. 
+            </figcaption>
+        </figure>
+          
+        </div>
+      </div>
+    
+    
+      <div class="row spacing">
+        <div class="col-xs-4">
+            <h1>Expert advice</h1>
+        </div>
+        <div class="col-xs-8">
+          <p>
+            So far, this RDM approach is oblivious to expert assessments about the future; projections from climate models, energy price and financial forecasts do not influence the results. This is by design and in the spirit of avoiding "agree-on-assumptions" situations typical of scenario-based impact studies. Expert opinion is nonetheless valuable and expert judgement about uncertain variables is presented by plotting dots over the results, as in the figure below.  (<a href="#brown12">Brown et al, 2012</a>). Decision-makers thus have the final say on whether to use this expert information or not.
+          </p>
+          
+          <figure>
+            <img src="/static/img/options_expert_en.png" alt="Expert advice over options minimizing regret" width="40%"  style="margin-left:30%">
+            <figcaption>
+                Expert advice about future changes in temperature and precipitation are overlaid over the least-regret options.  
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    
+    
+    
+    
+      <div class="row spacing">
+        <div class="col-xs-4">
+            <h1>References</h1>
+        </div>
+        <div class="col-xs-8">
+        <p>
+            <ul>
+                <li>
+            <cite id='kalra15'>Kalra, N., Hallegate, S., Lempert, R., Brown, C., Fozzard, A., Gill, S., and Shah, A. (2014). <a target="_blanck" href="http://hdl.handle.net/10986/18772">Agreeing on Robust Decisions New Processes for Decision Making Under Deep Uncertainty</a>, <em>The World Bank, Policy Research Working Paper #6906</em>.</cite>
+        </li>
+        <li>
+            <cite id="brown12">Brown, C., Ghile, Y., Laverty, M., & Li, K. (2012). <a target="_blanck" href="http://dx.doi.org/10.1029/2011WR011212">Decision scaling: Linking bottom-up vulnerability analysis with climate projections in the water sector</a>. <em>Water Resources Research</em>, 48(9).</cite>
+            </li>
+            </ul>
+           </p> 
+        </div>
+      </div>
+    </div>
+          
+          
+          
+</div>
+
+{% endblock %}

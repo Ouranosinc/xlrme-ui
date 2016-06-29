@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="header">
+    <div class="container">
+        <div class="box">
+            <h1>{{ _('A new way to look at climate information') }}</h1>
+            <p>{{ _("Hydroelectric generation investments span decades and are likely to be impacted by climate change. This project looks at ways to bring climate science closer to the decision-making process used by energy utilities.") }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container page-style">
+    <div class="row spacing">
+        <div class="col-xs-4">
+            <h1>{{ _('Project') }}</h1>
+        </div>
+        <div class="col-xs-8">
+            <p>{{ _("The uncertainties around climate projections are often perceived as an obstacle to their use in real world decision-making situations. The fact that climate change impacts vary according to emission scenarios, climate models and natural variability can put stakeholders in the delicate position of having to agree on climate scenarios before agreeing on adaptation measures. To work around this impediment to action, this project experiments with the Robust Decision Making framework, an approach that could be described as a large-scale sensitivity study mixing climatic and economic variables. In collaboration with Hydro-Québec and Manitoba Hydro, we've created decision-support tools for two case studies in the hydroelectricity sector. The aim of these studies is to show-case how climate information from multi-model ensembles can be leveraged by decision-makers as expert advice, without getting caught in technical debates about emission scenarios and model selection.") }}</p>
+        </div>
+    </div>
+
+    <div class="row spacing">
+        <div class="col-xs-4">
+            <h1>Applications</h1>
+        </div>
+        <div class="col-xs-8">
+            <p>{{ _("These studies look at two fictitious situations, one where a utility plans to upgrade the equipment of an existing station, and another where it studies options for a new generating station. For each investment choice, whether it's the number of turbines to rerunner, the total capacity to install or the maximum drawdown of the reservoir, we compute the energy generated over many decades and the revenues from these investment over a range of future conditions. These conditions not only include the climate, that is changes in temperature and precipitations, but also consider the energy market: electricity prices for exports and the discount rate -- the cost of borrowing capital to build or upgrade a power station. The investment choices can be compared between themselves to see which perform best in different future climatic and market conditions.") }} </p>
+        </div>
+    </div>
+
+    <div class="row spacing">
+        <div class="col-xs-4">
+            <h1>{{ _('Try it') }}</h1>
+        </div>
+        <div class="col-xs-8">
+            <p>{{ _("Try the fictitious North Station case study for an example of how the Robust Decision Making concepts can be applied to the construction of a dam and generating station.") }} </p>
+        </div>
+    </div>
+    
+    <div class="row spacing logos">
+        <div class="col-xs-3">
+            <figure><img src="/static/img/Hydro-Quebec-Logo.png" alt="Hydro Québec Logo" width="100%"></figure>
+        </div>
+        <div class="col-xs-3">
+            <figure><img src="/static/img/Manitoba-Hydro-Logo.png" alt="Hydro Manitoba Logo" width="100%"></figure>
+        </div>
+        <div class="col-xs-3">
+            <figure><img src="/static/img/NRCan-Canada.png" alt="Natural Resources Canada Logo" width="100%"></figure>
+        </div>
+        <div class="col-xs-3">
+            <figure><img src="/static/img/ouranos-logo.png" alt="Ouranos Logo" width="100%"></figure>
+        </div>
+    </div>
+</div>    
+
+{% endblock %}

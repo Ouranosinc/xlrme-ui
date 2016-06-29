@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="app" class="_dev app">
+    <div class="panels-wrapper">
+        <div class='panel' id="uncertainties">
+            <div class='panel-heading'>
+                <span class="side">
+					<span class="over-gradient"></span>
+                    <b>X</b>
+                    <span class="title">{{ _('Uncertainties') }}</span>
+                </span>
+            </div>
+            <div class='panel-body' id='uncertainties-body'>
+                <form class="form-horizontal" id='uncertainties-body'></form>
+            </div>
+        </div>
+
+        <div class='panel' id="levers">
+            <div class='panel-heading'>
+                <span class="side">
+					<span class="over-gradient"></span>
+                    <b>L</b>
+                    <span class="title">{{ _('Levers') }}</span>
+                </span>
+            </div>
+            <div class='panel-body' id='levers-body'></div>
+        </div>
+
+        <div class='panel' id="metrics">
+            <div class='panel-heading'>
+                <span class="side">
+					<span class="over-gradient"></span>
+                    <b>M</b>
+                    <span class="title">{{ _('Metrics') }}</span>
+                </span>
+            </div>
+            <div class='panel-body' id='metrics-body'></div>
+        </div>
+
+        <div class='panel' id="experts">
+            <div class='panel-heading'>
+                <span class="side">
+					<span class="over-gradient"></span>
+                    <b>E</b>
+                    <span class="title">{{ _('Expert Advice') }}</span>
+                </span>
+            </div>
+            <div class='panel-body' id='expert-body'></div>
+        </div>
+    </div>
+  
+
+    <h1 id="main-title"></h1>
+	
+    <div id="main-select">
+    	<!-- Select buttons -->
+    	<div id="select-options"></div>
+    </div>
+    
+    <div id="main"></div>
+	
+    <div id="slider-body">
+        <!-- The individual sliders are created programatically now -->
+    </div>
+
+	
+	
+	
+    <!-- Points of interest -->
+	<div id="cd-points-interest">
+		<ul>
+			<li class="cd-single-point" id="cd-menu-left">
+				<a class="cd-img-replace" href="#0">More</a>
+				<div class="cd-more-info cd-right">
+					<h2>{{ _('Control panel') }}</h2>
+					<h3>{{ _('Uncertainties') }}</h3>
+					<p>
+					    {{ _("Click on the drop-down menus to indicate where each variable should be displayed, whether it's on the graphic x or y axes, or one of the sliders at the bottom.") }}
+					</p>
+					<h3>{{ _('Levers') }}</h3>
+					<p>
+					{{ _('Click to select one or many of the options available to decision-makers. The ValueMap graphic displays results from only one lever at a time, while the LeverLine and RegretMap compare the results from multiple levers. For each selected lever, additional parameters can be set such as the lever cost. Enter a number within the input area and the results will update accordingly.') }}
+					</p>
+					
+					<h3>{{ _('Metrics') }}</h3>
+					<p>
+					    {{ _('Click on the performance metric to be displayed in the main graphic. Only one metric can be shown at a time. The description and units of the metric appear above the graphic ') }}
+					</p>
+					
+					<h3>{{ _('Expert advice') }}</h3>
+					<p>
+					    {{ _('Click on sources of expert information. Markers will appear on the graph or the slider bar to indicate what these expert think of these uncertain variables. Hover on dots to see the details about the description of each expert advice. Note that no dots will show up if the active metric does not include the dimension over which expert advice is provided.') }}
+					</p>
+					
+					<a href="#0" class="cd-close-info cd-img-replace">Close</a>
+				</div>
+			</li> <!-- .cd-single-point -->
+
+			<li class="cd-single-point" id="cd-sliders">
+				<a class="cd-img-replace" href="#0">More</a>
+				<div class="cd-more-info cd-top">
+					<h2>{{ _('Uncertain variable sliders') }}</h2>
+					<p>
+						{{ _('Since metric results can only be display in one or two dimensions, these sliders are used to select the value of extra dimensions. Click on the slider bar or drag the slider handle to modify the value of the variables.') }}
+					</p>
+					<a href="#0" class="cd-close-info cd-img-replace">Close</a>
+				</div>
+			</li> <!-- .cd-single-point -->
+
+			<li class="cd-single-point" id="cd-graph">
+				<a class="cd-img-replace" href="#0">More</a>
+				<div class="cd-more-info cd-right">
+					<h2>{{ _('Results') }}</h2>
+					<p>
+						{{ _('This is where metric values are displayed depending on the type of graphic selected.') }}
+					</p>	
+						<h3>{{ _('ValueMap') }}</h3>
+						<p> {{ _('Metric values are displayed by color-coded rectangles, where the mapping between color and values is shown by the colorbar shown at the bottom right. These values vary along the horizontal (x) and vertical (y) axes, each axis standing for an uncertain variable. This type of graphic can only show one lever at a time.') }}
+						</p>
+						
+						<h3>{{ _('LeverLines') }}</h3>
+						<p>{{ _('Metric values are displayed on the vertical axis and vary along the horizontal axis, representing an uncertain variable. Multiple levers can be compared and appear as lines of different colors. ') }}
+						</p>
+						<h3>{{ _('RegretMap') }}</h3>
+						<p>{{ _('Regret is the difference between the metric value calculated with a preferred lever and the best performing lever. First select multiple levers to compare from the left Levers menu, then pick a preferred lever from the top lever menu. Note that if only one lever is selected from the left menu, the regret can only be zero. Again, regret values are color-coded as shown in the colorbar at the bottom right.') }}
+						</p>
+						
+					
+					<a href="#0" class="cd-close-info cd-img-replace">Close</a>
+				</div>
+			</li> <!-- .cd-single-point -->
+
+			<li class="cd-single-point" id="cd-graphbuttons">
+				<a class="cd-img-replace" href="#0">More</a>
+				<div class="cd-more-info cd-bottom">
+					<h2>{{ _('Graphic menu') }}</h2>
+					<p>
+						{{ _('Select different types of graphic to display the metric values. The RegretMap and LeverLines can compare multiple levers, while the ValueMap shows the metric values for one lever at a time.') }}
+					</p>
+					<a href="#0" class="cd-close-info cd-img-replace">Close</a>
+				</div>
+			</li> <!-- .cd-single-point -->
+		</ul>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block jslibs %}
+{% assets "app_js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+{% endblock %}

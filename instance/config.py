@@ -1,0 +1,2 @@
+SECRET_KEY = 'E]!u9r9+6ig?=UFTHHJyg9pRo*"QoR<DtPm32w60nwO6yx}bL5$|Y1Bo3X<X|V'
+DEBUG = True

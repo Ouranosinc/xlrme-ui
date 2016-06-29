@@ -1,0 +1,591 @@
+
+/*
+Mobile first:
+@media (min-width: 768px) {}
+@media (min-width: 992px) {}
+@media (min-width: 1200px) {}
+
+Or not:
+@media (max-width: 767px) {}
+@media (max-width: 991px) {}
+@media (max-width: 1199px) {}
+*/
+
+/* FONTS .......................................................................
+Font: Museo Sans
+Regular: 300 (400 in CSS for better compatibility)
+Strong: 900 (700 in CSS for better compatibility)
+*/
+
+@font-face {
+    font-family: 'museo_sans';
+    src: url('../fonts/museosans_300-webfont.eot');
+    src: url('../fonts/museosans_300-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/museosans_300-webfont.woff2') format('woff2'),
+         url('../fonts/museosans_300-webfont.woff') format('woff'),
+         url('../fonts/museosans_300-webfont.ttf') format('truetype'),
+         url('../fonts/museosans_300-webfont.svg#museo_sans300') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo_sans';
+    src: url('../fonts/museosans_900-webfont.eot');
+    src: url('../fonts/museosans_900-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/museosans_900-webfont.woff2') format('woff2'),
+         url('../fonts/museosans_900-webfont.woff') format('woff'),
+         url('../fonts/museosans_900-webfont.ttf') format('truetype'),
+         url('../fonts/museosans_900-webfont.svg#museo_sans900') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+html, body, p, h1, h2, h3, h4, h5, h6, input, textarea, button, label,
+svg text, .nvd3 text,
+#app #main .tick text,
+.nvd3 .nv-axis .nv-axisMaxMin text,
+.nvtooltip
+{
+	font-family: "museo_sans", "Arial", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+strong, b, h1,
+.btn,
+.ouranos-nav.navbar-default li.big a,
+#app #main-title,
+#app .axis-label text,
+.horizontal .ui-slider-label-ticks span,
+#app #colorbar-unit text,
+#app #colorbar-title text,
+#app .nv-axislabel,
+.cd-single-point .cd-more-info h2
+{
+	font-family: "museo_sans", "Arial", sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+
+
+/* TRANSITIONS .............................................................. */
+a,
+button, .btn,
+#app .ui-slider-wrapper .ui-slider-handle,
+#app #levers.panel input.form-control,
+.add-transition {
+    transition:all 0.3s ease;
+}
+
+.remove-transition {
+    transition:none !important;
+}
+
+
+/* BASE TAGS ................................................................ */
+body {font-size:12px; line-height: 1; position: relative; color: #000; background-color: #fff;}
+body, html {height:100%;}
+#app {position:static;overflow: hidden;}
+html * {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+
+a {text-decoration: underline; cursor: pointer;}
+a:focus {outline: thin dotted;}
+a:hover, a:active {outline: 0;}
+a:hover, a:focus {color:#000;}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {margin-bottom: 15px; margin-top: 0;}
+h1, .h1 {}
+h2, .h2 {}
+h3, .h3 {}
+	#app .panel h3 {font-size: 12px;line-height: 1;/* text-transform: uppercase; */margin: 2px 0 5px 0px;}
+
+p {margin: 0;}
+
+/* Un fix pour IE10 responsive, et aussi pour le "snap mode" */
+@-ms-viewport {width: 100%;}
+@viewport {width: device-width;}
+
+
+/* TOP .................................................................. */
+.ouranos-nav {background-color: rgba(64,67,71,1); border: none; min-height: auto; margin-bottom: 0; border-radius: 0; color: #b1b2b3;background-color: rgba(13,18,21,0.8);}
+.ouranos-nav .container {/* background-color: rgba(64,67,71,0.1); */}
+
+	/* Links (a) */
+    .ouranos-nav a,
+    .ouranos-nav.navbar-default .navbar-nav > li > a {text-decoration:none; color: #b1b2b3;font-size: 12px;line-height: 1;padding: 13px 14px 11px 14px;}
+
+	.ouranos-nav.navbar-default a.navbar-brand {color: #b1b2b3;text-transform: uppercase;height: auto;margin-right: 30px;min-width: 260px;}
+    .ouranos-nav.navbar-default li.logout a {font-size:14px;padding-top: 9px;padding-bottom: 9px;}
+
+    	.ouranos-nav a:hover,
+		.ouranos-nav.navbar-default .navbar-nav > li > a:hover,
+		.ouranos-nav.navbar-default a.navbar-brand:hover {color:#fff;}
+
+	/* Title */
+	.ouranos-nav .navbar-header {border-right:1px solid #53565a;}
+	
+	/* Big links (MH and HQ) */
+	.ouranos-nav.navbar-default li.big a {border-right:1px solid #53565a; color:#fff; font-size:18px;padding: 10px 25px 8px 25px;}
+	.ouranos-nav.navbar-default li.big a:hover,
+	.ouranos-nav.navbar-default li.big.active a {background-color:#2d3135; color:#fff;}
+	.ouranos-nav.navbar-default li.big.active a:after {border-bottom:4px solid #2d3135; width:100%; content:''; display:block; position:absolute;top:38px;left:0;}
+
+	/* Spacing after big links */
+	.ouranos-nav.navbar-default li.spacing {padding-left:10px;}
+
+	/* "?" link */
+	.ouranos-nav.navbar-default li.points-interest {}
+	.ouranos-nav.navbar-default li.points-interest a {}
+	.ouranos-nav.navbar-default li.points-interest a:hover {}
+	.ouranos-nav.navbar-default li.points-interest.active a {background-color:#2d3135; color:#fff;}
+	.ouranos-nav.navbar-default li.points-interest.active a:after {border-bottom:4px solid #2d3135; width:100%; content:''; display:block; position:absolute;top:38px;left:0;}
+
+    /* Sign in */
+    .ouranos-nav .caret {margin-left: 7px;}
+    .ouranos-nav.navbar-default .dropdown.open > a {color:#fff;background-color: #565a5e;}
+	.ouranos-nav .navbar-nav .dropdown-menu {background-color:#565a5e;padding: 25px 25px 20px 25px;margin: 0;font-size: 12px;border: none;border-radius: 0; text-align:center;}
+
+
+/* LEFT MENU .................................................................. */
+#app .panels-wrapper {float: left;position: relative;width: 272px;margin-top: 1px;z-index: 10;h;/* height: 952px; */background-color: #404347;margin-right: 28px;}
+#app .panel {width: 272px;margin-bottom: 0;border: 0;border-radius: 0;-webkit-box-shadow: none;box-shadow: none;height: 100%;position: relative;border-bottom: 1px solid #fff;}
+
+	/* Colors */
+	#app #uncertainties {background-color:#404a54;}
+	#app #levers {background-color:#434f49;}
+	#app #metrics {background-color:#524e48;}
+	#app #experts {background-color:#504548;}
+
+	#app #uncertainties .panel-heading {background-color:#428bca;}
+	#app #levers .panel-heading {background-color:#5cb85c;}
+	#app #metrics .panel-heading {background-color:#f0ad4e;}
+	#app #experts .panel-heading {background-color:#d9534f;}
+
+	#app #uncertainties .panel-heading .side b {border-color:#68a2d5;}
+	#app #levers .panel-heading .side b {border-color:#7dc67d;}
+	#app #metrics .panel-heading .side b {border-color:#f3bd71;}
+	#app #experts .panel-heading .side b {border-color:#e17572;}
+
+	#app #uncertainties .panel-heading .side .over-gradient {background: linear-gradient(to bottom, rgba(66,139,202,0) 0%,rgba(66,139,202,1) 90%);}
+	#app #levers .panel-heading .side .over-gradient {background: linear-gradient(to bottom, rgba(92,184,92,0) 0%,rgba(92,184,92,1) 90%);}
+	#app #metrics .panel-heading .side .over-gradient {background: linear-gradient(to bottom, rgba(240,173,78,0) 0%,rgba(240,173,78,1) 90%);}
+	#app #experts .panel-heading .side .over-gradient {background: linear-gradient(to bottom, rgba(217,83,79,0) 0%,rgba(217,83,79,1) 90%);}
+
+	/* Panel heading */
+	#app .panel .panel-heading {border: none; background-color: inherit; width: 40px; padding: 0; border-radius: 0; position: absolute; text-align: center; height: 100%;}
+	#app .panel .panel-heading .side {font-size:20px; line-height:1; text-decoration:none; color: #fff; float: left; width: 40px; padding: 12px 0 0 0; height: 100%; outline: none;overflow: hidden;}
+	#app .panel .panel-heading .side .over-gradient {height: 40px;width: 100%;position: absolute;z-index: 99;bottom: 0;left: 0;}
+	#app .panel .panel-heading .side b {border-bottom-width: 1px; border-bottom-style: solid; display: block; padding-bottom: 7px;margin-bottom: 7px;}
+	#app .panel .panel-heading .side .title {text-transform:uppercase; font-size:14px; display: inline-block; height: 40px; position: relative; left: 26px; white-space: nowrap;
+		-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+		-webkit-transform-origin: 0 0;
+		-moz-transform-origin: 0 0;
+		-o-transform-origin: 0 0;
+		-ms-transform-origin: 0 0;
+		transform-origin: 0 0;
+	}
+
+	/* Panel body */
+	#app .panel .panel-body {position: static; color: #c6c6c6;margin-left: 40px;padding: 11px 0 8px 0; min-height:40px;}
+	#app .panel .panel-body .form-group {position: static; padding-left: 15px; padding-right: 12px; margin: 0 0 3px 0; overflow: hidden;margin-bottom: 0;}
+	#app .panel .panel-body .form-group label {display: block; width: 115px; float: left; margin: 0;text-align: left;padding: 6px 0 6px 0;}
+	#app .panel .panel-body .form-group label .caret {margin-right: 6px; border: 4px solid transparent; border-left: 4px solid;position: relative;top: -1px;}
+	#app .panel .panel-body .form-group .form-group {padding-left: 15px; padding-right: 0;float: left;width: 100%;}
+	#app .panel .panel-body .form-group .form-group label {width:100px;}
+	#app .panel .panel-body .radio,
+	#app .panel .panel-body .checkbox {position: static; min-height: 0; margin: 0; padding: 0;}
+	.body-class #app .panel .radio label,
+	.body-class #app .panel .checkbox > label {width: 100%;}
+
+		/* Hide radios and checkboxes, but not all of them */
+		#app .panel .panel-body div.radio.chart-dep label input[type=radio],
+		#app .panel .panel-body div.checkbox.chart-dep label input[type=checkbox] {display:none;}
+
+		/* Hover */
+		#app #levers.panel .panel-body .form-group .radio > label:hover {color:#fff; cursor:pointer;}
+
+		/* Active */
+		#app .panel .panel-body .form-group.active {background-color: rgba(0,0,0,0.2);  margin-bottom: 0;}
+		#app .panel .panel-body .form-group.active .radio > label, #app .panel .panel-body .form-group.active > .checkbox > label {color:#fff;margin-bottom: 0px;}
+		#app .panel .panel-body .form-group.active.detail label .caret {border: 4px solid transparent; border-top: 4px solid;top: 2px;left: -2px;}
+
+		/* Levers */
+		#app #levers.panel .panel-body .form-group.active {margin-bottom:2px;}
+		#app #levers.panel input.form-control {color: #eee; background: none; border-color: rgba(0,0,0,0.3); -webkit-box-shadow: none; box-shadow: none;}
+		#app #levers.panel input.form-control:hover,
+		#app #levers.panel input.form-control:focus {background: #fff; border: 1px solid #c6c6c6; -webkit-box-shadow: inset 0 4px 5px rgba(0,0,0,0.15); box-shadow: inset 0 4px 5px rgba(0,0,0,0.15); color: #404347;}
+		
+		/* Metrics */
+		#app #metrics.panel .panel-body {padding-bottom: 11px;}
+
+		/* Expert Advice */
+		#app #experts.panel .panel-body .form-group.active {margin-bottom:2px;}
+		#app #experts.panel .panel-body .form-group .form-group .checkbox label {padding: 4px 0;}
+
+
+/* TITLE ZONE .................................................................. */
+	/* Main title h1 */
+	#app #main-title {text-align:left;position: static;float: left;width: auto;left: auto;font-size: 30px;color: #404347;margin-top: 27px;margin-bottom: 0;}
+	#app #main-title .note {color: #bdc2c6; font-size: 22px;}
+
+	/* Buttons at right */
+	#app #main-select {margin-top:20px;text-align: left;position: relative; float: right; width: auto; font-size: 30px; color: #404347;margin-right: 20px;white-space: nowrap;z-index: 10;}
+	#app #main-select .btn-group-horizontal {float: right;}
+
+	/* Regret select */
+	#app #main-select #select-options {float: left;margin-right: 15px;margin-top: 0;}
+	#app #main-select #select-options .form-group {margin-bottom:0;font-size: 12px;line-height: 1;position: relative;top: -5px;}
+	#app #main-select #select-options label {color: #6c6d70; font-size: 12px;margin: 0 0 3px 0;}
+	#app #main-select #select-options select {width: 120px;}
+
+	@media (min-width: 1300px) {
+		#app #main-select #select-options {margin-top: 15px;}
+		#app #main-select #select-options label {display: inline;float: left;margin-right: 10px;margin-top: 6px;}
+	}
+
+	@media (min-width: 1450px) {
+		#app #main-title {margin-left: 64px;}
+		#app #main-select {margin-right: 108px;}
+	}
+
+
+/* GRAPH ZONE .................................................................. */
+#app #main {width: 100%; position: absolute; top: 90px; left: 0; height: 610px;padding-left: 300px;}
+#app #main > svg {overflow:visible;}
+	
+	/* Labels */
+	#app .axis-label {}
+	#app #main .label-background {fill: #e2e2e2;}
+	#app .axis-label text,
+	#app .nv-axislabel {fill: #73787c;font-size: 12px; text-anchor: middle;}
+
+	/* Axis */
+	#app #main .axis {}
+	#app #main .axis path,
+	#app #main .nvd3 .nv-axis path {stroke: #ababab;stroke-opacity: 1;}
+	#app #main .tick {fill: #888c91;}
+	#app #main .tick text,
+	#app #main .nvd3 .nv-axis .nv-axisMaxMin text {fill: #888c91;font-size: 10px;}
+	#app #main .nvd3 .nv-axis line {stroke: #eee;}
+
+	/* Color bar */
+	#app #colorbar {}
+	#app #colorbar .cb-text {fill: #888c91;font-size: 10px;}
+	#app #colorbar-unit {fill: #888c91;}
+	#app #colorbar-title {}
+	#app #colorbar-title text {fill: #73787c;font-size: 12px;text-anchor: start;}
+	#app #colorbar-unit text {fill: #73787c;font-size: 12px;text-anchor: middle;}
+
+	/* Tooltip */
+	.d3-tip,
+	.nvtooltip {color:#73787c;background: rgba(226,226,226,0.95); border:none; padding:10px 20px; z-index:99; box-shadow:0 0 10px 1px rgba(0,0,0,0.25);font-size: 12px;border-radius: 0;}
+	.d3-tip p {border-top:1px solid #ccc; padding:4px 0;}
+	.d3-tip p:first-child {border:0;}
+	.d3-tip p strong {}
+	.d3-tip p span {}
+
+	.nvtooltip table {margin:0;}
+	.nvtooltip table td {padding:8px 0;}
+	.nvtooltip table tbody td {border-top:1px solid #ccc; padding-left:12px;}
+	.nvtooltip table tbody td:first-child {padding-left:0;}
+
+	/* Expert data */
+	#app #expert .datapoint {opacity: 0.5;}
+
+	/* Leverlines legend */
+	#app #leverlines .nv-legend-text {fill: #73787c;}
+
+
+/* SLIDERS ZONE .................................................................. */
+#app #slider-body {position: absolute; width: 100%; bottom: 0; left: 0; background-color: #e2e2e2; z-index: 0;  overflow: hidden;padding: 35px 40px 0 300px;}
+
+	/* Slider */
+	#app .slider {color: #6c6d70;margin-bottom: 30px;float: left;width: 100%;position: relative;}
+	#app .slider .ui-slider-wrapper.horizontal {text-align: right;height: auto;width: 100%;padding-left: 270px;position: relative;}
+
+	/* Label */
+	#app .slider .slider-label {display: block;  width: 250px; text-align: right; position: absolute;top: -2px;}
+
+	/* Slider axis label and ticks */
+	#app .horizontal .ui-slider-labels {top: -5px;width: auto;padding-left: 300px;position: relative;}
+	#app .horizontal .ui-slider-label-ticks {border-left-color: #ababab; height: 6px; position:absolute;}
+	#app .horizontal .ui-slider-label-ticks span {color: #888c91; font-size: 10px; top: -17px;}
+
+	/* Slider bar and handle */
+	#app .ui-slider-wrapper .ui-slider {background: #fff; border-color: #ababab; border-radius: 0; height: 6px;left: 1px;}
+	#app .ui-slider-wrapper .ui-slider-handle {border: none; background: #404347; border-radius: 0; cursor: pointer; top: -5px; width: 14px; height: 14px; box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.4);}
+	#app .ui-slider-wrapper .ui-slider-handle.ui-state-hover {background:#000; box-shadow:0px 0px 8px 0px rgba(0, 0, 0, 0.8);}
+
+
+/* CONTENT PAGE .................................................................. */
+.page-style {margin-top: 70px;}
+
+	.page-style h1 {font-size: 30px; color: #404347; border-top: 1px solid #bdc2c6; padding-top: 10px;}
+	.page-style dt {font-size: 20px; color: #404347;}
+	.page-style p,
+	.page-style li,
+	.page-style dd {color:#404347; font-size: 16px; line-height: 1.5;}
+
+	.page-style p {margin-bottom:20px;}
+	.page-style ul {margin: 0 0 20px 0;padding: 0;}
+	.page-style ul li {margin-bottom:10px;list-style: none;padding-left: 19px;}
+	.page-style ul li:before {display: block; content:''; color:#6999a9; position:absolute; margin-left:-17px; margin-top:7px; width: 0; height: 0; border-top: 4px solid; border-right: 4px solid transparent; border-left: 4px solid transparent; border: 4px solid transparent; border-left: 4px solid;}
+
+	.page-style figure {margin: 40px 0;}
+	.page-style figure figcaption {text-align: center; text-transform: uppercase; color: #999; border-top: 1px solid #ddd; padding-top: 10px; margin-top: 30px;}
+	
+	.page-style .logos {border-top: 1px solid #ddd; padding-top:20px;}
+	.page-style .logos figure {margin: 0;height: 110px;padding: 0 20px;}
+	.page-style .logos figure img {position: absolute; top: 50%; width: 75%; text-align: center;
+		-webkit-transform: translate3d(0,-50%,0);
+		transform: translate3d(0,-50%,0);
+	}
+	
+	.page-style .row.spacing {margin-bottom:30px;}
+
+	.header {color: #dbeef7;font-size: 16px;line-height: 1.5;text-align: left;background: url('../img/banner-image-water.jpg') no-repeat 50% 60%;background-size: cover;border-bottom: 1px solid #34383c;padding-top: 80px;margin-top: -36px;}
+	.header .box {background: rgba(2, 35, 61, 0.8);padding: 45px 50px 40px 0; width: 470px;margin-top: 30px;}
+	.header .box h1 {color: #fff; font-size: 30px; border-left: 10px solid #6999a9;padding-left: 50px;margin-bottom: 20px;}
+	.header .box p {padding-left: 60px;}
+
+
+	.page-style .dl-horizontal dt {width:60px;}
+	.page-style .dl-horizontal dd {margin-left:80px;}
+
+/* FORM CONTROLS .................................................................... */
+form {}
+
+	/* Input + Select */
+	form input[type="text"],
+	form input[type="password"],
+	form select,
+	.form-control,
+	select.form-control {
+		height: auto;
+		padding: 3px 6px;
+		margin: 0 0 3px 0;
+		font-size: 12px;
+		line-height: 1.4;
+		color: #404347;
+		background: #fff;
+		border: 1px solid #c6c6c6;
+		border-radius: 0;
+		-webkit-box-shadow: inset 0 4px 5px rgba(0,0,0,0.15);
+		box-shadow: inset 0 4px 5px rgba(0,0,0,0.15);
+	}
+
+	/* Radios and checkboxes */
+	input[type=radio], .radio input[type=radio],
+	input[type=checkbox], .checkbox input[type=checkbox] {margin: 0 8px 0 0;}
+
+	/* Header form */
+	.navbar-form {margin-top: 0; margin-bottom: 0;}
+	.navbar-form select.form-control {margin-top: 6px; background: #bdc2c6; color: #000;}
+
+	/* Sign in form */
+	.dropdown-menu form input[type="text"],
+	.dropdown-menu form input[type="password"] {margin-bottom: 8px; background: #bdc2c6; padding: 9px 15px 8px 15px;width: 171px;color: #000;}
+	.dropdown-menu form input[type="password"] {margin-bottom:20px;}
+	.dropdown-menu form input[type="checkbox"] {margin: 0 5px 0 0;}
+	.dropdown-menu form label {position:relative; top:-2px;margin-bottom: 10px;}
+
+	.dropdown-menu ::-webkit-input-placeholder {color: #676b6f;}
+	.dropdown-menu :-moz-placeholder {color: #676b6f;}
+	.dropdown-menu ::-moz-placeholder {color: #676b6f;}
+	.dropdown-menu :-ms-input-placeholder {color: #676b6f;}
+
+	/* Variables, Left col */
+	#app .panel select,
+	#app input.form-control {width: 85px; float: right;}
+
+	div form.details {display:none;}
+	div.active form.details {display:inline;margin-bottom: 5px;float: left;}
+
+
+/* BUTTONS .................................................................. */
+.btn {border: none; font-size: 14px; line-height: 1; text-transform: uppercase; border-radius: 0; padding: 10px; box-shadow: 0 2px 2px rgba(0,0,0,0.1); background-color: #6999a9;}
+.btn:hover, .btn:focus {background-color:#547a87;}
+
+	/* BTN default */
+	.btn-default {color: #73787c; background-color: #fff; border: 1px solid #c6c6c6;font-size: 12px;padding: 10px 15px;outline: none;}
+	.btn-default:hover, .btn-default:focus,
+	.btn-default:active, .btn-default.active {color: #73787c; background-color: #e2e2e2;}
+
+	/* Bootstrap overrides */
+	.btn:focus, .btn:active:focus, .btn.active:focus {outline:none;}
+
+
+/* BOOTSTRAP DISABLE MOBILE ................................................. */
+@media (max-width: 991px) {
+	.container {width: 970px;}
+	.navbar-header {float: left;}
+	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {margin-left: -15px;}
+	.container>.navbar-header, .container-fluid>.navbar-header, .container>.navbar-collapse, .container-fluid>.navbar-collapse {margin-right: 0; margin-left: 0;}
+	.navbar-nav {float: left; margin: 0;}
+	.navbar-nav>li {float: left;}
+	.navbar-nav.navbar-right:last-child {margin-right: -15px;}
+	.navbar-right {float: right!important;}
+	.navbar-form {width: auto; border: 0; margin-left: 0; margin-right: 0; padding-top: 0; padding-bottom: 0; -webkit-box-shadow: none; box-shadow: none;}
+}
+
+
+/* POINTS OF INTERESTS ...................................................... */
+#cd-points-interest {display:none;z-index: 105;position: relative;top: 0;left: 0;/* overflow: hidden; *//* width: 100%; *//* height: 100%; */}
+
+	#cd-points-interest ul {margin:0; padding:0;}
+	#cd-points-interest .cd-img-replace {/* replace text with background images */ display: inline-block; overflow: hidden; text-indent: 100%; white-space: nowrap;}
+
+	#cd-points-interest .cd-single-point {position: absolute; border-radius: 50%;z-index: 105;}
+	#cd-points-interest .cd-single-point > a {position: relative;z-index: 99; display: block; width: 44px; height: 44px; border-radius: inherit; background: #d95353; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3); transition: background-color 0.2s;outline: none;}
+	#cd-points-interest .cd-single-point > a::after,
+	#cd-points-interest .cd-single-point > a:before {/* rotating plus icon */ content: ''; position: absolute; left: 50%; top: 50%; bottom: auto; right: auto;background-color: #ffffff;
+		-webkit-transform: translateX(-50%) translateY(-50%);
+			-ms-transform: translateX(-50%) translateY(-50%);
+				transform: translateX(-50%) translateY(-50%);
+		-webkit-transition-property: -webkit-transform;
+		   -moz-transition-property: -moz-transform;
+				transition-property: transform;
+		-webkit-transition-duration: 0.2s;
+		   -moz-transition-duration: 0.2s;
+				transition-duration: 0.2s;
+	}
+	#cd-points-interest .cd-single-point > a::after {height: 2px; width: 17px;}
+	#cd-points-interest .cd-single-point > a::before {height: 17px; width: 2px;}
+	#cd-points-interest .cd-single-point::after {/* this is used to create the pulse animation */
+		content: '';
+		position: absolute;
+		z-index: 98;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		border-radius: inherit;
+		background-color: transparent;
+		-webkit-animation: cd-pulse 2s infinite;
+		animation: cd-pulse 2s infinite;
+	}
+	#cd-points-interest .cd-single-point.is-open > a {background-color: #475f74;}
+	#cd-points-interest .cd-single-point.is-open > a::after, 
+	#cd-points-interest .cd-single-point.is-open > a::before {
+		-webkit-transform: translateX(-50%) translateY(-50%) rotate(135deg);
+			-ms-transform: translateX(-50%) translateY(-50%) rotate(135deg);
+				transform: translateX(-50%) translateY(-50%) rotate(135deg);
+	}
+	#cd-points-interest .cd-single-point.is-open::after {/* remove pulse effect */ display: none;}
+	#cd-points-interest .cd-single-point.is-open .cd-more-info {visibility: visible;opacity: 1;transition: opacity 0.3s 0s, visibility 0s 0s, transform 0.3s 0s, top 0.3s 0s, bottom 0.3s 0s, left 0.3s 0s, right 0.3s 0s;
+		-webkit-transform: scale(1);
+			-ms-transform: scale(1);
+				transform: scale(1);
+	}
+	#cd-points-interest .cd-single-point.visited > a {background-color: #475f74;}
+	#cd-points-interest .cd-single-point.visited::after {/* pulse effect no more active on visited elements */ display: none;}
+
+
+	#cd-points-interest .cd-single-point .cd-more-info {position: fixed; top: 0; left: 0; z-index: 100; width: 100%; height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; text-align: left; line-height: 1.5; background-color: rgba(255, 255, 255, 0.95); padding: 2em 1em 1em; visibility: hidden; opacity: 0;transition: opacity 0.3s 0s, visibility 0s 0.3s, transform 0.3s 0s, top 0.3s 0s, bottom 0.3s 0s, left 0.3s 0s, right 0.3s 0s;
+		-webkit-transform: scale(0.8);
+			-ms-transform: scale(0.8);
+				transform: scale(0.8);
+	}
+	#cd-points-interest .cd-single-point .cd-more-info::before {/* triangle next to the interest point description - hidden on mobile */ content: ''; position: absolute; height: 0; width: 0; display: none; border: 12px solid transparent;}
+	#cd-points-interest .cd-single-point .cd-more-info h2 {font-size: 20px; line-height: 1; color: #404347; margin-bottom: 10px; margin-top: 10px; color: #fff;}
+	#cd-points-interest .cd-single-point .cd-more-info h3 {text-transform:uppercase; color:#fff; font-size:14px;margin: 18px 0 5px 0;line-height: 1;}
+	#cd-points-interest .cd-single-point .cd-more-info p {color: #73787c; font-size: 13px; line-height: 1.4; margin-bottom: 10px; color: #fff; opacity: 0.7;}
+	#cd-points-interest .cd-single-point .cd-more-info {position: absolute;width: 400px; height: auto; overflow-y: visible; line-height: 1.4; color: #73787c; background: rgba(226,226,226,0.95); border: none; padding: 11px 25px; z-index:101; box-shadow:0 0 10px 1px rgba(0,0,0,0.25); font-size: 12px; border-radius: 0; background: #475f74;}
+	#cd-points-interest #cd-graphbuttons.cd-single-point .cd-more-info {width: 230px;}
+	#cd-points-interest .cd-single-point .cd-more-info::before {display: block;}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-left,
+	#cd-points-interest .cd-single-point .cd-more-info.cd-right {top: 50%; bottom: auto;
+		-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+	}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-left::before,
+	#cd-points-interest .cd-single-point .cd-more-info.cd-right::before {top: 50%; bottom: auto;
+		-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+	}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-left {right: 160%; left: auto;}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-left::before {border-left-color: rgba(226,226,226,0.95); left: 100%; border-left-color: #475f74;}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-right {left: 160%;}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-right::before {border-right-color: rgba(226,226,226,0.95); right: 100%; border-right-color: #475f74;}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-top, 
+	#cd-points-interest .cd-single-point .cd-more-info.cd-bottom {left: 50%; right: auto;
+		-webkit-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+				transform: translateX(-50%);
+	}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-top::before, 
+	#cd-points-interest .cd-single-point .cd-more-info.cd-bottom::before {left: 50%; right: auto;
+		-webkit-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+				transform: translateX(-50%);
+	}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-top {bottom: 160%; top: auto;}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-top::before {border-top-color: rgba(226,226,226,0.95); top: 100%; border-top-color: #475f74;}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-bottom {top: 160%;}
+	#cd-points-interest .cd-single-point .cd-more-info.cd-bottom::before {border-bottom-color: rgba(226,226,226,0.95); bottom: 100%; border-bottom-color: #475f74;}
+	#cd-points-interest .cd-close-info {display: none;}
+
+
+/* POINTS OF INTERESTS ANIMATIONS .............................................. */
+	@-webkit-keyframes cd-pulse {
+		0% {
+			-webkit-transform: scale(1);
+			box-shadow: inset 0 0 1px 1px rgba(217, 83, 83, 0.8);
+		}
+		50% {
+			box-shadow: inset 0 0 1px 1px rgba(217, 83, 83, 0.8);
+		}
+		100% {
+			-webkit-transform: scale(1.6);
+			box-shadow: inset 0 0 1px 1px rgba(217, 83, 83, 0);
+		}
+	}
+	@-moz-keyframes cd-pulse {
+		0% {
+			-moz-transform: scale(1);
+			box-shadow: inset 0 0 1px 1px rgba(217, 83, 83, 0.8);
+		}
+		50% {
+			box-shadow: inset 0 0 1px 1px rgba(217, 83, 83, 0.8);
+		}
+		100% {
+			-moz-transform: scale(1.6);
+			box-shadow: inset 0 0 1px 1px rgba(217, 83, 83, 0);
+		}
+	}
+	@keyframes cd-pulse {
+		0% {
+			-webkit-transform: scale(1);
+			-ms-transform: scale(1);
+			transform: scale(1);
+			box-shadow: inset 0 0 1px 1px rgba(217, 83, 83, 0.8);
+		}
+		50% {
+			box-shadow: inset 0 0 1px 1px rgba(217, 83, 83, 0.8);
+		}
+		100% {
+			-webkit-transform: scale(1.6);
+			-ms-transform: scale(1.6);
+			transform: scale(1.6);
+			box-shadow: inset 0 0 1px 1px rgba(217, 83, 83, 0);
+		}
+	}
+
+
+/* AUTRES ................................................................... */
+.responsive-img {height:auto; max-width:100%; width: 100% \9; /* Pour IE 8-10 SVG */}
+.soft-hide {display: none;} /* Difference between hide and soft-hide: hide has important, soft-hide doesn't */
+
+#info {display:none; /* Remove from the DOM? */}
+
+.inner {position:absolute; top: 0px; left:0px; z-index:1;}
+#main pre {overflow: scroll;}
+#app pre {font-size:8px; width:100%; border:none;}
+.ui-slider-wrapper.vertical {width:auto;}
+#app .vertical-text {transform: rotate(90deg); position:absolute;}

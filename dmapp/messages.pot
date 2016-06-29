@@ -1,0 +1,408 @@
+# Translations template for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-06-29 15:27-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+#: common/config.py:16
+msgid "key"
+msgstr ""
+
+#: common/config.py:23
+msgid "Cost (M$)"
+msgstr ""
+
+#: common/config.py:26
+msgid "Amortizement"
+msgstr ""
+
+#: common/config.py:33
+msgid "Start date"
+msgstr ""
+
+#: common/config.py:40
+msgid "Construction date"
+msgstr ""
+
+#: common/config.py:43
+msgid "In service date"
+msgstr ""
+
+#: common/config.py:55 templates/dash.html:118
+msgid "ValueMap"
+msgstr ""
+
+#: common/config.py:56 templates/dash.html:125
+msgid "RegretMap"
+msgstr ""
+
+#: common/config.py:57 templates/dash.html:122
+msgid "LeverLines"
+msgstr ""
+
+#: pub/config.py:17
+msgid "Streamflow change"
+msgstr ""
+
+#: pub/config.py:17
+msgid "Mean annual streamflow change"
+msgstr ""
+
+#: pub/config.py:18
+msgid "Demand pattern"
+msgstr ""
+
+#: pub/config.py:18
+msgid "Transition to New-England demand pattern"
+msgstr ""
+
+#: pub/config.py:18
+msgid "Transition to warmer demand pattern"
+msgstr ""
+
+#: pub/config.py:19
+msgid "Price trend"
+msgstr ""
+
+#: pub/config.py:19
+msgid "Energy price trend"
+msgstr ""
+
+#: pub/config.py:20
+msgid "Discount"
+msgstr ""
+
+#: pub/config.py:20 pub/config.py:43
+msgid "Discount rate"
+msgstr ""
+
+#: pub/config.py:20
+msgid "Anticipated return on investments with similar risk profiles."
+msgstr ""
+
+#: pub/config.py:31
+msgid "Energy"
+msgstr ""
+
+#: pub/config.py:31
+msgid "Annual energy production"
+msgstr ""
+
+#: pub/config.py:31
+msgid "Mean annual energy generated."
+msgstr ""
+
+#: pub/config.py:32
+msgid "Firm energy"
+msgstr ""
+
+#: pub/config.py:32
+msgid "Firm annual energy production"
+msgstr ""
+
+#: pub/config.py:32
+msgid "Annual energy guaranteed it will be generated."
+msgstr ""
+
+#: pub/config.py:33
+msgid "Spill"
+msgstr ""
+
+#: pub/config.py:33
+msgid "Mean monthly spill flow"
+msgstr ""
+
+#: pub/config.py:34
+msgid "Drawdown"
+msgstr ""
+
+#: pub/config.py:34
+msgid "Mean annual reservoir fluctuation"
+msgstr ""
+
+#: pub/config.py:34
+msgid "Mean annual reservoir fluctuations"
+msgstr ""
+
+#: pub/config.py:35
+msgid "Flooded area"
+msgstr ""
+
+#: pub/config.py:35
+msgid "Flooded area at maximal level"
+msgstr ""
+
+#: pub/config.py:35
+msgid "Maximum flooded area"
+msgstr ""
+
+#: pub/config.py:36
+msgid "IRR"
+msgstr ""
+
+#: pub/config.py:36
+msgid "Internal Rate of Return"
+msgstr ""
+
+#: pub/config.py:36
+msgid "Internal rate of return of the investment"
+msgstr ""
+
+#: pub/config.py:37
+msgid "NPV"
+msgstr ""
+
+#: pub/config.py:37
+msgid "Net Present Value"
+msgstr ""
+
+#: pub/config.py:37
+msgid "Net present value of the investment."
+msgstr ""
+
+#: pub/config.py:41
+msgid "Global climate model projections"
+msgstr ""
+
+#: pub/config.py:41
+msgid "Runoff projections from CMIP5 models averaged over the watershed"
+msgstr ""
+
+#: pub/config.py:41
+msgid "Emission scenario"
+msgstr ""
+
+#: pub/config.py:42
+msgid "U.S. Energy Information Administration Electricity price forecasts"
+msgstr ""
+
+#: pub/config.py:43
+msgid "Discount rates used by various agencies"
+msgstr ""
+
+#: pub/config.py:43
+msgid "Scenario"
+msgstr ""
+
+#: templates/base.html:10 templates/base.html:38
+msgid "Ouranos Decision-Making Project"
+msgstr ""
+
+#: templates/base.html:44
+msgid "Northern Hydropower"
+msgstr ""
+
+#: templates/base.html:46
+msgid "Explanations"
+msgstr ""
+
+#: templates/base.html:48
+msgid "About"
+msgstr ""
+
+#: templates/base.html:65 templates/base.html:72
+msgid "Sign in"
+msgstr ""
+
+#: templates/base.html:68
+msgid "Username"
+msgstr ""
+
+#: templates/base.html:69
+msgid "Password"
+msgstr ""
+
+#: templates/base.html:78
+msgid "Logout"
+msgstr ""
+
+#: templates/dash.html:11 templates/dash.html:77
+msgid "Uncertainties"
+msgstr ""
+
+#: templates/dash.html:24 templates/dash.html:81
+msgid "Levers"
+msgstr ""
+
+#: templates/dash.html:35 templates/dash.html:86
+msgid "Metrics"
+msgstr ""
+
+#: templates/dash.html:46
+msgid "Expert Advice"
+msgstr ""
+
+#: templates/dash.html:76
+msgid "Control panel"
+msgstr ""
+
+#: templates/dash.html:79
+msgid ""
+"Click on the drop-down menus to indicate where each variable should be "
+"displayed, whether it's on the graphic x or y axes, or one of the sliders"
+" at the bottom."
+msgstr ""
+
+#: templates/dash.html:83
+msgid ""
+"Click to select one or many of the options available to decision-makers. "
+"The ValueMap graphic displays results from only one lever at a time, "
+"while the LeverLine and RegretMap compare the results from multiple "
+"levers. For each selected lever, additional parameters can be set such as"
+" the lever cost. Enter a number within the input area and the results "
+"will update accordingly."
+msgstr ""
+
+#: templates/dash.html:88
+msgid ""
+"Click on the performance metric to be displayed in the main graphic. Only"
+" one metric can be shown at a time. The description and units of the "
+"metric appear above the graphic "
+msgstr ""
+
+#: templates/dash.html:91
+msgid "Expert advice"
+msgstr ""
+
+#: templates/dash.html:93
+msgid ""
+"Click on sources of expert information. Markers will appear on the graph "
+"or the slider bar to indicate what these expert think of these uncertain "
+"variables. Hover on dots to see the details about the description of each"
+" expert advice. Note that no dots will show up if the active metric does "
+"not include the dimension over which expert advice is provided."
+msgstr ""
+
+#: templates/dash.html:103
+msgid "Uncertain variable sliders"
+msgstr ""
+
+#: templates/dash.html:105
+msgid ""
+"Since metric results can only be display in one or two dimensions, these "
+"sliders are used to select the value of extra dimensions. Click on the "
+"slider bar or drag the slider handle to modify the value of the "
+"variables."
+msgstr ""
+
+#: templates/dash.html:114
+msgid "Results"
+msgstr ""
+
+#: templates/dash.html:116
+msgid ""
+"This is where metric values are displayed depending on the type of "
+"graphic selected."
+msgstr ""
+
+#: templates/dash.html:119
+msgid ""
+"Metric values are displayed by color-coded rectangles, where the mapping "
+"between color and values is shown by the colorbar shown at the bottom "
+"right. These values vary along the horizontal (x) and vertical (y) axes, "
+"each axis standing for an uncertain variable. This type of graphic can "
+"only show one lever at a time."
+msgstr ""
+
+#: templates/dash.html:123
+msgid ""
+"Metric values are displayed on the vertical axis and vary along the "
+"horizontal axis, representing an uncertain variable. Multiple levers can "
+"be compared and appear as lines of different colors. "
+msgstr ""
+
+#: templates/dash.html:126
+msgid ""
+"Regret is the difference between the metric value calculated with a "
+"preferred lever and the best performing lever. First select multiple "
+"levers to compare from the left Levers menu, then pick a preferred lever "
+"from the top lever menu. Note that if only one lever is selected from the"
+" left menu, the regret can only be zero. Again, regret values are color-"
+"coded as shown in the colorbar at the bottom right."
+msgstr ""
+
+#: templates/dash.html:137
+msgid "Graphic menu"
+msgstr ""
+
+#: templates/dash.html:139
+msgid ""
+"Select different types of graphic to display the metric values. The "
+"RegretMap and LeverLines can compare multiple levers, while the ValueMap "
+"shows the metric values for one lever at a time."
+msgstr ""
+
+#: templates/index.html:7
+msgid "A new way to look at climate information"
+msgstr ""
+
+#: templates/index.html:8
+msgid ""
+"Hydroelectric generation investments span decades and are likely to be "
+"impacted by climate change. This project looks at ways to bring climate "
+"science closer to the decision-making process used by energy utilities."
+msgstr ""
+
+#: templates/index.html:16
+msgid "Project"
+msgstr ""
+
+#: templates/index.html:19
+msgid ""
+"The uncertainties around climate projections are often perceived as an "
+"obstacle to their use in real world decision-making situations. The fact "
+"that climate change impacts vary according to emission scenarios, climate"
+" models and natural variability can put stakeholders in the delicate "
+"position of having to agree on climate scenarios before agreeing on "
+"adaptation measures. To work around this impediment to action, this "
+"project experiments with the Robust Decision Making framework, an "
+"approach that could be described as a large-scale sensitivity study "
+"mixing climatic and economic variables. In collaboration with Hydro-"
+"Québec and Manitoba Hydro, we've created decision-support tools for two "
+"case studies in the hydroelectricity sector. The aim of these studies is "
+"to show-case how climate information from multi-model ensembles can be "
+"leveraged by decision-makers as expert advice, without getting caught in "
+"technical debates about emission scenarios and model selection."
+msgstr ""
+
+#: templates/index.html:28
+msgid ""
+"These studies look at two fictitious situations, one where a utility "
+"plans to upgrade the equipment of an existing station, and another where "
+"it studies options for a new generating station. For each investment "
+"choice, whether it's the number of turbines to rerunner, the total "
+"capacity to install or the maximum drawdown of the reservoir, we compute "
+"the energy generated over many decades and the revenues from these "
+"investment over a range of future conditions. These conditions not only "
+"include the climate, that is changes in temperature and precipitations, "
+"but also consider the energy market: electricity prices for exports and "
+"the discount rate -- the cost of borrowing capital to build or upgrade a "
+"power station. The investment choices can be compared between themselves "
+"to see which perform best in different future climatic and market "
+"conditions."
+msgstr ""
+
+#: templates/index.html:34
+msgid "Try it"
+msgstr ""
+
+#: templates/index.html:37
+msgid ""
+"Try the fictitious North Station case study for an example of how the "
+"Robust Decision Making concepts can be applied to the construction of a "
+"dam and generating station."
+msgstr ""
+

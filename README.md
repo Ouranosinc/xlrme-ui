@@ -8,7 +8,12 @@ As a climate service center, Ouranos is faced with the task of providing useful,
 Natural Resources Canada provided funding to Ouranos to explore decision-making approaches with the objective of supporting investment decisions in the hydropower sector. Two case studies were done in collaboration with Hydro-Québec and Manitoba Hydro. This repository contains the web application built to visualize the results from these case studies, and is populated for demo purposes with synthetic data. This project should be considered as a proof of concept that is evolving toward a more mature implementation. 
 
 
+Installation
+------------
+
+Create an instance directory holding a config.py file to store the secret key and
+debugging configuration parameters. 
 
 
-
-
+Creating a case study
+---------------------
